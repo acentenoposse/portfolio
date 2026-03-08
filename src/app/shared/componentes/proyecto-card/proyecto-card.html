@@ -1,0 +1,43 @@
+<article class="card surface-card">
+  @if (proyecto().imagenUrl) {
+    <div class="cover">
+      <img [src]="proyecto().imagenUrl!" [alt]="proyecto().imagenAlt || proyecto().titulo" loading="lazy" />
+    </div>
+  }
+  <div class="card-top">
+    <div>
+      <span class="pill">{{ proyecto().categoria }}</span>
+      <h3>{{ proyecto().titulo }}</h3>
+      <p class="subtitulo">{{ proyecto().subtitulo }}</p>
+    </div>
+    <span class="estado" [class.deployado]="proyecto().estado === 'Deployado'">{{ proyecto().estado }}</span>
+  </div>
+
+  <p class="descripcion">{{ proyecto().descripcion }}</p>
+
+  <div class="impacto-box">
+    <span>Lo más importante</span>
+    <p>{{ proyecto().impacto }}</p>
+  </div>
+
+  <div class="stack-list">
+    @for (item of proyecto().stack; track item) {
+      <span>{{ item }}</span>
+    }
+  </div>
+
+  <ul class="highlights">
+    @for (highlight of proyecto().destacado; track highlight) {
+      <li>{{ highlight }}</li>
+    }
+  </ul>
+
+  <div class="acciones">
+    @if (proyecto().demoUrl) {
+      <a class="btn btn-primary" [href]="proyecto().demoUrl" target="_blank" rel="noreferrer">Ver demo</a>
+    }
+    @if (proyecto().repoUrl) {
+      <a class="btn btn-secondary" [href]="proyecto().repoUrl" target="_blank" rel="noreferrer">Repositorio</a>
+    }
+  </div>
+</article>

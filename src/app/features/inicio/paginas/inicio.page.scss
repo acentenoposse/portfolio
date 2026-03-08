@@ -1,0 +1,71 @@
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.skills-grid--3cols {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skill-card,
+.valor-card {
+  padding: 1.35rem;
+  border-radius: var(--radius-lg);
+}
+
+.skill-card h3,
+.valor-card h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.2rem;
+}
+
+.skill-card p,
+.valor-card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.valor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.numero {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 1100px) {
+  .skills-grid--3cols,
+  .valor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .proyectos-grid,
+  .skills-grid--3cols,
+  .valor-grid {
+    grid-template-columns: 1fr;
+  }
+}

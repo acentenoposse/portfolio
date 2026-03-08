@@ -1,0 +1,25 @@
+<header class="nav-shell">
+  <div class="container nav surface-card">
+    <a class="brand" href="#inicio" (click)="cerrarMenu()">
+      <span class="brand-mark">A</span>
+      <div>
+        <strong>Agustín Centeno</strong>
+        <small>Frontend / Fullstack</small>
+      </div>
+    </a>
+
+    <button class="menu-btn" type="button" (click)="toggleMenu()" [attr.aria-expanded]="abierto()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="links" [class.open]="abierto()">
+      <a href="#proyectos" (click)="cerrarMenu()">Proyectos</a>
+      <a href="#stack" (click)="cerrarMenu()">Stack</a>
+      <a href="#valor" (click)="cerrarMenu()">Valor</a>
+      <a href="#contacto" (click)="cerrarMenu()">Contacto</a>
+      <a class="btn btn-primary cta" href="mailto:tuemail@ejemplo.com">Hablemos</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<app-hero
+  [nombre]="'Agustín Centeno Posse'"
+  [rol]="'Angular Frontend Developer'"
+  [descripcion]="'Desarrollo interfaces web modernas, limpias y escalables, con foco en UX/UI, arquitectura mantenible y experiencia responsive real.'"
+></app-hero>
+
+<section id="proyectos" class="section-spacing">
+  <div class="container">
+    <app-seccion-titulo
+      eyebrow="Proyectos"
+      titulo="Mis proyetos más recientes."
+      descripcion="Quiero mostrar un poco de lo que estuve trabajando este último tiempo."
+    />
+
+    <div class="proyectos-grid">
+      @for (proyecto of proyectos; track proyecto.titulo) {
+        <app-proyecto-card [proyecto]="proyecto" />
+      }
+    </div>
+  </div>
+</section>
+
+<section id="stack" class="section-spacing">
+  <div class="container">
+    <app-seccion-titulo
+      eyebrow="Tecnologías"
+      titulo="Mi Stack actual"
+      descripcion="Estas son las tecnologías que actualmente uso para trabajar en mis proyectos."
+    />
+
+    <div class="skills-grid skills-grid--3cols">
+      @for (grupo of skills; track grupo.titulo) {
+        <article class="skill-card surface-card">
+          <h3>{{ grupo.titulo }}</h3>
+          <p>{{ grupo.descripcion }}</p>
+          <div class="chips-wrap">
+            @for (item of grupo.items; track item.nombre) {
+              <app-skill-chip [texto]="item.nombre" [icono]="item.icono" />
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section id="valor" class="section-spacing">
+  <div class="container valor-grid">
+    <article class="valor-card surface-card">
+      <span class="numero">01</span>
+      <h3>Diseño con intención</h3>
+      <p>Busco lo visual, la claridad y sensación de producto serio.</p>
+    </article>
+
+    <article class="valor-card surface-card">
+      <span class="numero">02</span>
+      <h3>Responsive real</h3>
+      <p>El layout está pensado desde mobile hasta desktop para que la experiencia no dependa del dispositivo.</p>
+    </article>
+
+    <article class="valor-card surface-card">
+      <span class="numero">03</span>
+      <h3>Visión de producto</h3>
+      <p>Me interesa entender negocio, escalabilidad, arquitectura y usabilidad.</p>
+    </article>
+  </div>
+</section>
+
+<app-footer [year]="year"></app-footer>

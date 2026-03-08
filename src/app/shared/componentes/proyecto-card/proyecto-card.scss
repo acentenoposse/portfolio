@@ -1,0 +1,137 @@
+.card {
+  overflow: hidden;
+}
+
+.cover {
+  position: relative;
+  margin: -1.4rem -1.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card {
+  display: grid;
+  gap: 1.2rem;
+  padding: 1.4rem;
+  border-radius: var(--radius-lg);
+  height: 100%;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pill,
+.estado {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.pill {
+  background: rgba(97, 218, 251, 0.12);
+  border: 1px solid rgba(97, 218, 251, 0.24);
+  color: var(--primary);
+}
+
+.estado {
+  white-space: nowrap;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text-muted);
+}
+
+.estado.deployado {
+  color: var(--success);
+  border-color: rgba(99, 230, 190, 0.25);
+  background: rgba(99, 230, 190, 0.12);
+}
+
+h3 {
+  margin: 0.9rem 0 0.35rem;
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+.subtitulo,
+.descripcion,
+.impacto-box p,
+.highlights {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.impacto-box {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.impacto-box span {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-soft);
+  font-weight: 800;
+}
+
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.stack-list span {
+  padding: 0.45rem 0.72rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.highlights {
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+@media (max-width: 640px) {
+  .card-top {
+    flex-direction: column;
+  }
+
+  .acciones {
+    flex-direction: column;
+  }
+
+  .acciones .btn {
+    width: 100%;
+  }
+}
