@@ -3,7 +3,7 @@ import { Proyecto } from '../modelos/proyecto';
 export const PROYECTOS: Proyecto[] = [
   {
     titulo: 'ERP Cairo',
-    subtitulo: 'Sistema comercial ERP modular con foco en escalabilidad',
+    subtitulo: 'Sistema comercial ERP modular con foco en escalabilidad. Para ingresar se puede usar cualquier mail y la contraseña: 123456',
     descripcion:
       'Es un proyecto en conjunto con otro desarrollador, orientado a gestión de sucursales, stock, productos, precios, proveedores y operaciones internas. Pensado para crecer a e-commerce y automatizaciones.',
     categoria: 'Proyecto real',
